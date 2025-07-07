@@ -1,5 +1,3 @@
-use std::fmt::format;
-
 fn main() {
     let mut colors = ["white", "green", "blue", "purple"];
     println!("Before updating, colors is: {:?}", colors);
@@ -31,6 +29,13 @@ fn main() {
 
     // invoke static method of the Person Struct
     Person::say_hello();
+
+    // using the Direction Enum
+    let north = Direction::NORTH;
+    let west = Direction::WEST;
+
+    spit_coordinates(&north);
+    spit_coordinates(&west);
 }
 
 // for slices
@@ -63,4 +68,31 @@ impl Person {
     fn say_hello() {
         println!("I am a Person");
     }
+}
+
+fn spit_coordinates(direction: &Direction) {
+    // this is how u do switch equivalent in Rust
+    match direction {
+        Direction::EAST => println!("Going towards the East!"),
+        Direction::NORTH => println!("Going towards the North"),
+        Direction::SOUTH => println!("Going towards the SOUTH"),
+        Direction::WEST => println!("Going towards the WEST"),
+    }
+}
+
+#[derive(Debug)]
+#[allow(unused)]
+enum Direction {
+    NORTH,
+    SOUTH,
+    WEST,
+    EAST,
+}
+
+#[derive(Debug)]
+#[allow(unused)]
+// generics
+struct Point<T> {
+    x: T,
+    y: T,
 }
