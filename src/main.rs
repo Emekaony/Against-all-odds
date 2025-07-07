@@ -1,3 +1,4 @@
+#[allow(unused)]
 fn main() {
     let mut colors = ["white", "green", "blue", "purple"];
     println!("Before updating, colors is: {:?}", colors);
