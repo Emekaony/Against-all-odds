@@ -1,5 +1,11 @@
+use crate::utils::contains_two::contains_two;
+
+mod utils;
+
 #[allow(unused)]
 fn main() {
+    contains_two(&[1, 2, 3, 4]);
+
     let mut colors = ["white", "green", "blue", "purple"];
     println!("Before updating, colors is: {:?}", colors);
     update_colors(&mut colors[2..4]);
@@ -37,6 +43,8 @@ fn main() {
 
     spit_coordinates(&north);
     spit_coordinates(&west);
+
+    // greet_anyone(&emeka);
 }
 
 // for slices
@@ -70,6 +78,22 @@ impl Person {
         println!("I am a Person");
     }
 }
+
+// Traits are like interfaces. Define with `trait` keyword:
+trait Greet {
+    fn greet(&self);
+}
+
+// // Implement trait for a struct:
+// impl Greet for Person {
+//     fn greet(&self) {
+//         println!("Hello, my name is {}", self.first_name);
+//     }
+// }
+
+// fn greet_anyone(greeter: &dyn Greet) {
+//     greeter.greet();
+// }
 
 fn spit_coordinates(direction: &Direction) {
     // this is how u do switch equivalent in Rust
