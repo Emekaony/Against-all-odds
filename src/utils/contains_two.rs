@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub fn contains_two(arr: &[i32]) {
     for item in arr.iter() {
         if *item == 2 {
