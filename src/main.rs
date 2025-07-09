@@ -1,22 +1,12 @@
-use crate::utils::contains_two::contains_two;
+use crate::utils::closures::apply;
 
 mod utils;
 
 #[allow(unused)]
 fn main() {
-    let c: i32 = apply(
-        |x| {
-            // easy way out: just be sensible
-            let mut c = x;
-            for i in 1..11 {
-                c = c + i;
-            }
-            return c;
-        },
-        2,
-    );
-    println!("{c}");
-    contains_two(&[1, 2, 3, 4]);
+    let times_two = |x: &mut i32| *x * 2;
+    let mut a: i32 = 10;
+    println!("{}", apply(times_two, &mut a));
 
     let mut colors = ["white", "green", "blue", "purple"];
     println!("Before updating, colors is: {:?}", colors);
@@ -122,8 +112,4 @@ enum Direction {
 struct Point<T> {
     x: T,
     y: T,
-}
-
-fn apply(f: fn(i32) -> i32, a: i32) -> i32 {
-    f(a)
 }
