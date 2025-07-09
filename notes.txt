@@ -4,3 +4,9 @@
   How many people are actually improving themselves, taking courses against all odds even when defeated by the current eomplyment market.
   I will put in the work necessary to beat all odds. There's no back-up plan
   I will do whatever it takes to win. I must WIN.
+- A closure is a variable. The whole idea behind closure is that it can capture its environment.
+- Closures capture their environment by accessing variables higher in scope than themselves.
+- when a closure mutates a variable, u must declare it as mutable because it implemens fnMut
+- fnOnce -> the closure takes ownership of its environment variable
+- fnMut -> mutates
+- fn -> just gets a reference
